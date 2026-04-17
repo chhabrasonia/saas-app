@@ -31,7 +31,7 @@ const GetStartedSection = ({data}) => {
                     </div>
                 </div>
                 <div>
-                    <Image className="w-full h-auto" src={data.image.url} alt={data.image.alt} width={353} height={336}  unoptimized/>
+                    <Image className="w-full h-auto" src={data.image.url} alt={data.image.alt} width={353} height={336} />
                 </div>
             </div>
       </Section>

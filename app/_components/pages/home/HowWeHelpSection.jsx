@@ -46,7 +46,7 @@ const HowWeHelpSection = ({data}) => {
                     </div>
                      {/* ********* Block Image ********* */}
                     <div>
-                        <Image className="w-full h-auto" unoptimized src={item.image.url} alt={item.image.alt} width={1200} height={800}/>
+                        <Image className="w-full h-auto"  src={item.image.url} alt={item.image.alt} width={1200} height={800}/>
                     </div>
                 </div>
                 )

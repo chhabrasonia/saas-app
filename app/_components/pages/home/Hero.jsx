@@ -41,7 +41,7 @@ const Hero = ({hero}) => {
                 </div>
                 {/* Hero Image */}
                 <div className="relative w-full hidden md:block">
-                    <Image src={hero.image}  width={100} height={100} alt='' sizes="100vw" unoptimized className="w-full"/>
+                    <Image src={hero.image}  width={100} height={100} alt='' sizes="100vw"  className="w-full"/>
                 </div>
             </div>
       </Section>

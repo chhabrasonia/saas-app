@@ -20,7 +20,6 @@ const Header = ({ data: { navigation, logo } }) => {
                         height={24}
                         alt={logo?.alt || "logo"}
                         className="w-full h-auto"
-                        unoptimized
                     />
                 </div>
 
