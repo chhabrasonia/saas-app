@@ -12,14 +12,19 @@ export default function Button({
 }) {
     const sizeClasses = {
         sm: "h-8 font-medium px-4 sm:px-5",
-        md: "h-9 font-medium px-4 sm:px-5",
-        lg: "h-10 font-semibold text-base px-6 sm:px-8",
+        md: "h-10 font-medium px-4 sm:px-5",
+        lg: "h-12 font-semibold text-base px-6 sm:px-10",
     }[size] || "h-9 font-medium px-4 sm:px-5";
+
+    const styleClasses = {
+        primary  : 'bg-primary text-white border hover:border-primary hover:bg-white hover:text-primary',
+        outline  : 'border border-primary hover:bg-primary hover:text-white',
+    }
 
     return href ? (
         <Link
             href={href}
-            className={`whitespace-nowrap ${sizeClasses[size]} ${className} ${
+            className={`whitespace-nowrap rounded ${sizeClasses} ${styleClasses[variant]} ${className} ${
                 disabled ? "opacity-50 cursor-not-allowed pointer-events-none" : ""
             }`}
             {...props}
@@ -28,7 +33,7 @@ export default function Button({
         </Link>
     ) : (
         <button
-            className={`whitespace-nowrap ${sizeClasses[size]} ${className}`}
+            className={`whitespace-nowrap rounded transition duration-300 ease-in-out ${sizeClasses} ${styleClasses[variant]} ${className}`}
             {...props}
             disabled={disabled}
         >

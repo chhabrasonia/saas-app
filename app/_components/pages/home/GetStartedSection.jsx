@@ -7,7 +7,7 @@ const GetStartedSection = ({data}) => {
     if (!data) return null;
     return (
         <Section className="bg-soft">
-            <div className="grid grid-cols-[1.45fr_1fr] gap-[149px] items-center">
+            <div className="grid md:grid-cols-[1.45fr_1fr] lg:gap-[149px] md:gap-20 items-center">
                 <div>
                     <Heading 
                         title={data.heading} 
@@ -15,12 +15,14 @@ const GetStartedSection = ({data}) => {
                         align="left" large={true} 
                         className="mb-6" 
                     />
-                    <div>
+                    <div className="flex gap-4">
                         {
-                            data.buttons && 
-                            data.buttons.map( (button) => 
+                            data.buttons.length > 0 && 
+                            data.buttons.map( (button,index) => 
                                 <Button
                                     key={button.label}
+                                    size="lg"
+                                    variant= {(index + 1) % 2 === 0 ? 'outline' : 'primary'}
                                 >
                                     {button.label}
                                 </Button>

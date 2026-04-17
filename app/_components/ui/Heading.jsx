@@ -8,7 +8,7 @@ const Heading = ({title, description, align="center", large = false, className =
             <h2 className = {`mb-3 ${large ? 'text-display' :  'text-title'}`}> {title} </h2>
             {
                 description && (
-                    <div dangerouslySetInnerHTML={{ __html: description }} />
+                    <div className="md:text-lg text-base" dangerouslySetInnerHTML={{ __html: description }} />
                 )
             }
         </div>

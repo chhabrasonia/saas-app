@@ -2,7 +2,7 @@ import Container from "./Container"
 
 const Section = ({className = '',  children, ...props}) => {
    return(
-   <section className = {`py-[60px] ${className}`} {...props}>
+   <section className = {`md:py-[60px] py-10 ${className}`} {...props}>
         <Container>
             {children}
         </Container>
