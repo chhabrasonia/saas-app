@@ -20,7 +20,7 @@ const Hero = ({hero}) => {
                     <div>
                         <form>
                             <div className="grid md:grid-cols-[1.5fr_1fr] gap-1 mb-2">
-                                <TextInput placeholder="Start Free Trial"/>
+                                <TextInput placeholder="Start Free Trial" className="bg-white"/>
                                 <Button size="lg">Start Free Trial</Button>
                             </div>
                         </form>

@@ -15,29 +15,40 @@ const Navbar = ({ navItems, isMobile = false, onNavigate }) => {
         <ul className={`flex ${isMobile ? "flex-col gap-2 p-5" : "gap-6"}`}>
             {navItems?.map((item) => {
                 const isOpen = activeId === item.id;
-
+              
                 return (
                     <li key={item.id} className="relative">
                         {/* MAIN ITEM */}
-                        <div
+                         <div
                             className="flex items-center justify-between gap-2 cursor-pointer py-2"
                             onClick={() => toggle(item.id)}
-                        >
-                            <span
-                                className={`hover:text-primary ${
-                                    isOpen ? "text-primary" : "text-gray-700"
-                                }`}
-                            >
-                                {item.title}
-                            </span>
+                        >   
+                           {/* If NO children → make it a Link */}
+                            {item.children?.length === 0 ? (
+                                <Link
+                                    href={item.url}
+                                    className={`hover:text-primary ${
+                                        activeId === item.id ? "text-primary" : "text-gray-700"
+                                    }`}
+                                >
+                                    {item.title}
+                                </Link>
+                            ) : (
+                                <span
+                                    className={`hover:text-primary ${
+                                        isOpen ? "text-primary" : "text-gray-700"
+                                    }`}
+                                >
+                                    {item.title}
+                                </span>
+                            )}
 
+                            {/* Chevron only if children exist */}
                             {item.children?.length > 0 && (
-                               <span className="md:pt-1"> 
+                                <span className="md:pt-1">
                                     <Chevron
                                         className={`transition-transform ${
-                                            isOpen
-                                                ? "rotate-180 text-primary"
-                                                : "text-gray-500"
+                                            isOpen ? "rotate-180 text-primary" : "text-gray-500"
                                         }`}
                                     />
                                 </span>
@@ -51,12 +62,12 @@ const Navbar = ({ navItems, isMobile = false, onNavigate }) => {
                                 <div className="absolute top-full left-0 mt-2 w-72 bg-white shadow-lg rounded-md z-50">
                                     <ul className="py-2">
                                         {item.children.map((sub) => (
-                                            <li
+                                            <li 
                                                 key={sub.id}
-                                                className="px-4 py-3 hover:bg-gray-50"
+                                                className=" hover:bg-gray-50"
                                             >
-                                                <Link href={sub.url}>
-                                                    <p className="text-sm font-semibold text-gray-800">
+                                                <Link href={sub.url} className="px-4 py-3 block group">
+                                                    <p className="text-sm font-semibold group-hover:text-primary text-gray-800">
                                                         {sub.title}
                                                     </p>
 
