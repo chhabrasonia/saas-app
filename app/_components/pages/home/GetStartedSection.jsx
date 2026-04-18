@@ -20,6 +20,7 @@ const GetStartedSection = ({data}) => {
                             data.buttons.length > 0 && 
                             data.buttons.map( (button,index) => 
                                 <Button
+                                    href ={button.action_type === 'link' ? button.link : button.modal_id}
                                     key={button.label}
                                     size="lg"
                                     variant= {(index + 1) % 2 === 0 ? 'outline' : 'primary'}

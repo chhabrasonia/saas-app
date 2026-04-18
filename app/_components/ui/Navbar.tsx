@@ -60,13 +60,13 @@ const Navbar = ({ navItems, isMobile = false, onNavigate }) => {
                             isOpen &&
                             item.children?.length > 0 && (
                                 <div className="absolute top-full left-0 mt-2 w-72 bg-white shadow-lg rounded-md z-50">
-                                    <ul className="py-2">
+                                    <ul className="py-4">
                                         {item.children.map((sub) => (
                                             <li 
                                                 key={sub.id}
                                                 className=" hover:bg-gray-50"
                                             >
-                                                <Link href={sub.url} className="px-4 py-3 block group">
+                                                <Link href={sub.url} className="px-5 py-3 block group">
                                                     <p className="text-sm font-semibold group-hover:text-primary text-gray-800">
                                                         {sub.title}
                                                     </p>

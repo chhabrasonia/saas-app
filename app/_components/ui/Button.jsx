@@ -18,13 +18,13 @@ export default function Button({
 
     const styleClasses = {
         primary  : 'bg-primary text-white border hover:border-primary hover:bg-transparent hover:text-primary',
-        outline  : 'border border-primary hover:bg-primary hover:text-white',
+        outline  : 'border border-primary text-primary hover:bg-primary hover:text-white',
     }
 
     return href ? (
         <Link
             href={href}
-            className={`whitespace-nowrap rounded ${sizeClasses} ${styleClasses[variant]} ${className} ${
+            className={`whitespace-nowrap rounded transition duration-300 ease-in-out flex items-center justify-center text-center ${sizeClasses} ${styleClasses[variant]} ${className} ${
                 disabled ? "opacity-50 cursor-not-allowed pointer-events-none" : ""
             }`}
             {...props}

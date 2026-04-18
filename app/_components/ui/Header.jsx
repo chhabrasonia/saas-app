@@ -30,8 +30,8 @@ const Header = ({ data: { navigation, logo } }) => {
 
                 {/* Desktop CTA */}
                 <div className="hidden md:flex gap-3">
-                    <Button size="md">Book a Demo</Button>
-                    <Button variant="outline" size="md">
+                    <Button size="md" variant="outline">Book a Demo</Button>
+                    <Button size="md" href="#">
                         Start Free Trial
                     </Button>
                 </div>
@@ -59,11 +59,11 @@ const Header = ({ data: { navigation, logo } }) => {
                     />
 
                     <div className="p-5 flex flex-col gap-3 border-t">
-                        <Button size="md" className="w-full">
+                        <Button size="md"  variant="outline"className="w-full">
                             Book a Demo
                         </Button>
-                        <Button variant="outline" size="md" className="w-full">
-                            Start Free Trial
+                        <Button size="md" className="w-full" href="#">
+                            Start Free Trial 
                         </Button>
                     </div>
                 </div>

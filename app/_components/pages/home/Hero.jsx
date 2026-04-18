@@ -11,16 +11,16 @@ const Hero = ({hero}) => {
             <div className="grid md:grid-cols-[1.3fr_1fr] lg:gap-[100px] gap-[50px] items-center">
                 <div className="w-full max-w-[476px]">
                     {/* Heading */}
-                    <div className="mb-4">
-                         <h1 className="text-display mb-4">{hero?.heading}</h1>
+                    <div className="lg:mb-10 md:mb-6 mb-4">
+                         <h1 className="text-display md:mb-5 mb-4">{hero?.heading}</h1>
                         <div className="lg:text-lg text-base" dangerouslySetInnerHTML={{ __html: hero?.description }} />
                     </div>
                     <div>
                     {/* form */}
                     <div>
-                        <form>
+                        <form id="trial">
                             <div className="grid md:grid-cols-[1.5fr_1fr] gap-1 mb-2">
-                                <TextInput placeholder="Start Free Trial" className="bg-white"/>
+                                <TextInput placeholder="Start Free Trial" className="bg-white" id="free-trial"/>
                                 <Button size="lg">Start Free Trial</Button>
                             </div>
                         </form>
